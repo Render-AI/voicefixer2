@@ -109,6 +109,10 @@ if __name__ == "__main__":
 
     if not args.silent:
         print("Start processing the input file %s." % args.infile)
+        print("CUDA:")
+        print(torch.cuda.is_available())
+        print("MPS:")
+        print(torch.backends.mps.is_available())
 
     if process_file:
         audioext = os.path.splitext(os.path.basename(args.infile))[-1]
