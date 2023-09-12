@@ -16,6 +16,11 @@ def try_tensor_cuda(tensor, cuda):
         print("VF: Using MPS")
         return tensor.to('mps')
     else:
+        print("VF: Using CPU")
+        if cuda:
+            print("VF: CUDA is enabled, but no GPU was usable")
+        else:
+            print("VF: CUDA was disabled")
         return tensor.cpu()
 
 
