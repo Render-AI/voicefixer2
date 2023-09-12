@@ -43,7 +43,7 @@ Please visit [demo page](https://haoheliu.github.io/demopage-voicefixer/) to vie
 
 First, install voicefixer via pip:
 ```shell
-pip install voicefixer==0.1.2
+pip install git+https://github.com/fakerybakery/voicefixer
 ```
 
 Process a file:
@@ -82,7 +82,7 @@ voicefixer -h
 
 Install voicefixer via pip:
 ```shell script
-pip install voicefixer==0.1.2
+pip install git+https://github.com/fakerybakery/voicefixer
 ```
 
 You can test audio samples on your desktop by running website (powered by [streamlit](https://streamlit.io/))
@@ -115,7 +115,7 @@ streamlit run test/streamlit.py
 
 First, install voicefixer via pip:
 ```shell script
-pip install voicefixer==0.1.2
+pip install git+https://github.com/fakerybakery/voicefixer
 ```
 
 Then run the following scripts for a test run:
