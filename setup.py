@@ -2,13 +2,11 @@
 # -*- encoding: utf-8 -*-
 # python3 setup.py sdist bdist_wheel
 """
-@File    :   setup.py.py    
-@Contact :   haoheliu@gmail.com
-@License :   (C)Copyright 2020-2100
+VOICEFIXER, made to work. VOICEFIXER was originally made Haohe (Leo) Liu, but modified by mrfakename to work.
 
-@Modify Time      @Author    @Version    @Desciption
-------------      -------    --------    -----------
-9/6/21 5:16 PM   Haohe Liu      1.0         None
+==https://github.com/fakerybakery/voicefixer==
+
+Thank you for using this fork of VOICEFIXER!
 """
 
 # !/usr/bin/env python
