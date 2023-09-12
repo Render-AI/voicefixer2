@@ -152,7 +152,7 @@ for mode in [0,1,2]:
     print("Testing mode",mode)
     voicefixer.restore(input=os.path.join(git_root,"test/utterance/original/original.flac"), # low quality .wav/.flac file
                        output=os.path.join(git_root,"test/utterance/output/output_mode_"+str(mode)+".flac"), # save file path
-                       cuda=False, # GPU acceleration
+                       cuda=False, # GPU acceleration, will auto-detect MPS now!!!
                        mode=mode)
     if(mode != 2):
         check("output_mode_"+str(mode)+".flac")
