@@ -94,7 +94,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    if torch.cuda.is_available() and not args.disable_cuda:
+    if (torch.cuda.is_available() and not args.disable_cuda) or (torch.backends.mps.is_available() and not args.disable_cuda):
         cuda = True
     else:
         cuda = False
