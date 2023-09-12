@@ -11,6 +11,8 @@ def check_cuda_availability(cuda):
 def try_tensor_cuda(tensor, cuda):
     if cuda and torch.cuda.is_available():
         return tensor.cuda()
+    if cuda and torch.backends.mps.is_available():
+        return tensor.to('mps')
     else:
         return tensor.cpu()
 
@@ -38,7 +40,7 @@ def move_data_to_device(x, device):
 
 
 def tensor2numpy(tensor):
-    if "cuda" in str(tensor.device):
+    if ("cuda" in str(tensor.device)) or ("mps" in str(tensor.device)):
         return tensor.detach().cpu().numpy()
     else:
         return tensor.detach().numpy()
