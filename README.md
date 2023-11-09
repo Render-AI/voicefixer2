@@ -2,6 +2,8 @@
 
 **Important:** The maintainers(s) of this repository are not affiliated or connected with the original version of VoiceFixer.
 
+**Note:** We are actively accepting contributions! Please check the To Do list for how you can contribute!
+
 # <img src="https://github.com/fakerybakery/voicefixer/assets/76186054/499b358d-0063-45bc-925b-d4136c05af34" width="50"> VoiceFixer 2
 
 Welcome to VoiceFixer 2, the next generation of VoiceFixer. VoiceFixer is a general speech restoration tool, using AI to remove background noise, fix degraded speech, enhance audio quality from old recordings, upscale low resolution, and more, all in one model!
@@ -24,6 +26,7 @@ We’ve added the following features in VoiceFixer 2:
 Here's what we still need to do:
 * Implement .mp3 support (currently only supports .wav)
 * Fine-tune model for better results
+* Use latest version of librosa
 ## Demo
 
 [Check out the demos to see what VoiceFixer can do!](https://haoheliu.github.io/demopage-voicefixer/)
