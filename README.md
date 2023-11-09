@@ -23,10 +23,10 @@ We’ve added the following features in VoiceFixer 2:
 * We’ve added MPS support, which means you can use GPU acceleration on M1 macs. You can enable this by setting the `cuda` parameter to `True`. It’s automatically enabled when using the command line interface (CLI).
 * More features coming soon!
 ## To-Do
-Here's what we still need to do:
+Here's what we still need to do - feel free to contribute:
 * Implement .mp3 support (currently only supports .wav)
-* Fine-tune model for better results
-* Use latest version of librosa
+* Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
+* Use latest version of librosa (probably pretty important)
 ## Demo
 
 [Check out the demos to see what VoiceFixer can do!](https://haoheliu.github.io/demopage-voicefixer/)
