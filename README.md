@@ -28,6 +28,7 @@ Here's what we still need to do - feel free to contribute:
 * Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
 * Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
 * Use latest version of librosa (probably pretty important)
+* Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
 ## Demo
 
 [Check out the demos to see what VoiceFixer can do!](https://haoheliu.github.io/demopage-voicefixer/)
