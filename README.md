@@ -25,6 +25,7 @@ We’ve added the following features in VoiceFixer 2:
 ## To-Do
 Here's what we still need to do - feel free to contribute:
 * Implement .mp3 support (currently only supports .wav) - probably won't be that hard - just need to use pydub. good beginner contribution!
+* Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
 * Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
 * Use latest version of librosa (probably pretty important)
 ## Demo
