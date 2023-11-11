@@ -118,15 +118,8 @@ def main():
     #     parser.print_help()
     #     sys.exit(0)
 
-    if (torch.cuda.is_available() and not args.disable_cuda) or (torch.backends.mps.is_available() and not args.disable_cuda):
-        print("VF: USING GPU")
-        cuda = True
-    else:
-        print("VF: USING CPU")
-        cuda = False
-
+    cuda = (torch.cuda.is_available() and not args.disable_cuda) or (torch.backends.mps.is_available() and not args.disable_cuda)
     process_file, process_folder = check_arguments(args)
-
     if not args.silent:
         print("Initializing VoiceFixer")
     voicefixer = VoiceFixer()
