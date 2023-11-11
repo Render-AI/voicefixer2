@@ -74,7 +74,7 @@ This is not guaranteed to work on all devices. Please see [FFmpeg's website](htt
 
 ## Usage
 
-**Important:** VoiceFixer can only process files in the `wav` format. We recommend using `ffmpeg` library to convert `mp3`s to `wav`s. We’re working on supporting this.
+**Important:** FFmpeg must be installed to support non-.wav files.
 
 ### Command Line
 

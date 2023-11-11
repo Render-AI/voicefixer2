@@ -6,25 +6,6 @@ import torch
 import os
 import sys
 
-print("""
-
-██╗   ██╗███████╗    ██╗   ██╗██████╗ 
-██║   ██║██╔════╝    ██║   ██║╚════██╗
-██║   ██║█████╗      ██║   ██║ █████╔╝
-╚██╗ ██╔╝██╔══╝      ╚██╗ ██╔╝██╔═══╝ 
- ╚████╔╝ ██║          ╚████╔╝ ███████╗
-  ╚═══╝  ╚═╝           ╚═══╝  ╚══════╝
-                                      
-Created by Haohe Liu. Modified by mrfakename.
-      
-  https://github.com/fakerybakery/voicefixer
-      
-Basic Usage:
-      
-  $ voicefixer -i <infile.wav> -o <outfile.wav>
-
-
-""")
 def writefile(infile, outfile, mode, append_mode, cuda, voicefixer, verbose=False):
     if append_mode is True:
         outbasename, outext = os.path.splitext(os.path.basename(outfile))
@@ -125,16 +106,30 @@ def main():
     voicefixer = VoiceFixer()
 
     if not args.silent:
+        print("""
+██╗   ██╗███████╗    ██╗   ██╗██████╗ 
+██║   ██║██╔════╝    ██║   ██║╚════██╗
+██║   ██║█████╗      ██║   ██║ █████╔╝
+╚██╗ ██╔╝██╔══╝      ╚██╗ ██╔╝██╔═══╝ 
+ ╚████╔╝ ██║          ╚████╔╝ ███████╗
+  ╚═══╝  ╚═╝           ╚═══╝  ╚══════╝
+                                      
+Created by Haohe Liu. Modified by mrfakename.
+      
+  https://github.com/fakerybakery/voicefixer
+      
+Basic Usage:
+      
+  $ voicefixer -i <infile.wav> -o <outfile.wav>
+
+""")
         print("Start processing the input file %s." % args.infile)
-        print("CUDA:")
-        print(torch.cuda.is_available())
-        print("MPS:")
-        print(torch.backends.mps.is_available())
 
     if process_file:
         audioext = os.path.splitext(os.path.basename(args.infile))[-1]
-        if audioext != ".wav":
-            print("NOTE: .wav file recommended. You may need to install ffmpeg to support mp3.")
+        if audioext.lower() != ".wav":
+            if not args.silent:
+                print("NOTE: .wav file recommended. You may need to install ffmpeg to support other formats.")
             # raise ValueError(
             #     "Error: Error processing the input file. We only support the .wav format currently. Please convert your %s format to .wav. Thanks."
             #     % audioext
