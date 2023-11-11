@@ -22,6 +22,8 @@ Created by Haohe Liu. Modified by mrfakename.
 Basic Usage:
       
   $ voicefixer -i <infile.wav> -o <outfile.wav>
+
+
 """)
 def writefile(infile, outfile, mode, append_mode, cuda, verbose=False):
     if append_mode is True:
@@ -120,7 +122,7 @@ def main():
         print("VF: USING GPU")
         cuda = True
     else:
-        print("VF: USING C{I")
+        print("VF: USING CPU")
         cuda = False
 
     process_file, process_folder = check_arguments(args)
