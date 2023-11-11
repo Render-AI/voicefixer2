@@ -21,16 +21,22 @@ We’ve added the following features in VoiceFixer 2:
 * We’ve added MPS support, which means you can use GPU acceleration on M1 macs. You can enable this by setting the `cuda` parameter to `True`. It’s automatically enabled when using the command line interface (CLI).
 * More features coming soon!
 
+## Changelog
+
+* Nov 11, 2023: Fix CLI issue (see TODO below)
+* Sep 14, 2023: Switch to NOSCL-C-2.0 license
+* Sep 11, 2023: Forked from VoiceFixer
+
 ## To-Do
 
 Here's what we still need to do - feel free to contribute:
 
-* Implement .mp3 support (currently only supports .wav) - probably won't be that hard - just need to use pydub. good beginner contribution!
-* Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
-* Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
-* Use latest version of librosa (probably pretty important)
-* Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
-* Fix CLI instead of copying to /bin use CLI like [this](https://github.com/fakerybakery/simplesplit/blob/main/setup.py)
+- [ ] Implement .mp3 support (currently only supports .wav) - probably won't be that hard - just need to use pydub. good beginner contribution!
+- [ ] Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
+- [ ] Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
+- [ ] Use latest version of librosa (probably pretty important)
+- [ ] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
+- [x] Fix CLI instead of copying to /bin use CLI like [this](https://github.com/fakerybakery/simplesplit/blob/main/setup.py)
 
 ## Demo
 
