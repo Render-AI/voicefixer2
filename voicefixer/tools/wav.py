@@ -4,6 +4,8 @@ import numpy as np
 import scipy.signal as signal
 import soundfile as sf
 import librosa
+import pydub
+import tempfile
 
 
 def save_wave(frames: np.ndarray, fname, sample_rate=44100):
@@ -34,7 +36,12 @@ def save_wave(frames: np.ndarray, fname, sample_rate=44100):
     frames = frames.astype(np.short)
     if len(frames.shape) >= 3:
         frames = frames[0, ...]
-    sf.write(fname, frames, samplerate=sample_rate)
+    if not fname.endswith('.wav'):
+        with tempfile.NamedTemporaryFile(suffix='.wav') as file:
+            sf.write(file.name, frames, samplerate=sample_rate)
+            pydub.AudioSegment.from_wav(file.name).export(fname)
+    else:
+        sf.write(fname, frames, samplerate=sample_rate)
 
 
 def constrain_length(chunk, length):
@@ -216,27 +223,3 @@ def filter(pth):
     print(dic.keys())
     for each in list(dic.keys()):
         print(each, len(dic[each]))
-
-
-if __name__ == "__main__":
-    path = "/Users/admin/Desktop/p376_025.wav"
-    stereo = "/Users/admin/Desktop/vocals.wav"
-    path_16 = "/Users/admin/Desktop/SI869.WAV.wav"
-    import time
-
-    start = time.time()
-    for i in range(1000):
-        frames, duration, sample_rate = random_chunk_wav_file(stereo, chunk_length=3.0)
-        print(frames.shape, np.max(frames))
-        save_wave(frames, "stero.wav", sample_rate=44100)
-        frames, duration, sample_rate = random_chunk_wav_file(path, chunk_length=3.0)
-        print(frames.shape, np.max(frames))
-        save_wave(frames, "mono.wav", sample_rate=44100)
-        frames, duration, sample_rate = random_chunk_wav_file(path_16, chunk_length=3.0)
-        print(frames.shape, np.max(frames))
-        save_wave(frames, "16.wav", sample_rate=16000)
-    print(time.time() - start)
-    # frames = read_wave(stereo,sample_rate=44100)
-    print(frames.shape)
-
-    print(frames)

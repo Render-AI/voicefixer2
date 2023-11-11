@@ -25,7 +25,7 @@ Basic Usage:
 
 
 """)
-def writefile(infile, outfile, mode, append_mode, cuda, verbose=False):
+def writefile(infile, outfile, mode, append_mode, cuda, voicefixer, verbose=False):
     if append_mode is True:
         outbasename, outext = os.path.splitext(os.path.basename(outfile))
         outfile = os.path.join(
@@ -134,10 +134,11 @@ def main():
     if process_file:
         audioext = os.path.splitext(os.path.basename(args.infile))[-1]
         if audioext != ".wav":
-            raise ValueError(
-                "Error: Error processing the input file. We only support the .wav format currently. Please convert your %s format to .wav. Thanks."
-                % audioext
-            )
+            print("NOTE: .wav file recommended. You may need to install ffmpeg to support mp3.")
+            # raise ValueError(
+            #     "Error: Error processing the input file. We only support the .wav format currently. Please convert your %s format to .wav. Thanks."
+            #     % audioext
+            # )
         if args.mode == "all":
             for file_mode in range(3):
                 writefile(
@@ -146,6 +147,7 @@ def main():
                     file_mode,
                     True,
                     cuda,
+                    voicefixer,
                     verbose=not args.silent,
                 )
         else:
@@ -155,6 +157,7 @@ def main():
                 args.mode,
                 False,
                 cuda,
+                voicefixer,
                 verbose=not args.silent,
             )
 
@@ -182,11 +185,12 @@ def main():
                         file_mode,
                         True,
                         cuda,
+                        voicefixer,
                         verbose=not args.silent,
                     )
             else:
                 writefile(
-                    in_file, out_file, args.mode, False, cuda, verbose=not args.silent
+                    in_file, out_file, args.mode, False, cuda, voicefixer, verbose=not args.silent
                 )
 
     if not args.silent:

@@ -47,7 +47,6 @@ if w:
 
     # Load audio from binary
     audio, _ = librosa.load(w, sr=sample_rate, mono=True)
-
     # Inference
     pred_wav = voice_fixer.restore_inmem(audio, mode=mode, cuda=is_cuda)
 

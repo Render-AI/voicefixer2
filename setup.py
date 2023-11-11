@@ -63,5 +63,5 @@ setup(
             "voicefixer = voicefixer.cli:main",
         ],
     },
-    scripts=['bin/voicefixer.cmd', "bin/voicefixer"]
+    # scripts=['bin/voicefixer.cmd', "bin/voicefixer"]
 )

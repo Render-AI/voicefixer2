@@ -16,7 +16,7 @@ Welcome to VoiceFixer 2, the next generation of VoiceFixer. VoiceFixer is a gene
 
 VoiceFixer aims to restore human speech, regardless of how seriously degraded it is. It can handle noise, reverberation, low resolution, and clipping effect within one model!
 
-## What’s different from the original VoiceFixer?
+## What's different from the original VoiceFixer?
 
 The [original version of VoiceFixer](https://github.com/haoheliu/voicefixer) continues to be updated with minor changes and bug fixes, however if one tries to install it and run it out of the box, one would encounter several errors that require modifying installed packages to fix.
 
@@ -31,6 +31,7 @@ We’ve added the following features in VoiceFixer 2:
 
 ## Changelog
 
+* Nov 11, 2023: Add preliminary MP3 support (requires `ffmpeg`) (see TODO below)
 * Nov 11, 2023: Fix CLI issue (see TODO below)
 * Sep 14, 2023: Switch to NOSCL-C-2.0 license
 * Sep 11, 2023: Forked from VoiceFixer
@@ -39,11 +40,11 @@ We’ve added the following features in VoiceFixer 2:
 
 Here's what we still need to do - feel free to contribute:
 
-- [ ] Implement .mp3 support (currently only supports .wav) - probably won't be that hard - just need to use pydub. good beginner contribution!
 - [ ] Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
 - [ ] Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
 - [ ] Use latest version of librosa (probably pretty important)
 - [ ] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
+- [x] Implement .mp3 support (currently only supports .wav) - probably won't be that hard - just need to use pydub. good beginner contribution!
 - [x] Fix CLI instead of copying to /bin use CLI like [this](https://github.com/fakerybakery/simplesplit/blob/main/setup.py)
 
 ## Demo
@@ -58,11 +59,26 @@ PyPi package coming soon!
 pip install git+https://github.com/fakerybakery/voicefixer
 ```
 
+
+### FFmpeg
+
+**NOTE:** For MP3/OGG/etc (non-WAV) support, you must install [FFmpeg](https://ffmpeg.org/)
+
+**Quick Installation**
+
+* macOS: `brew install ffmpeg`
+* Linux/Ubuntu: `sudo apt install ffmpeg`
+* Windows: `scoop install main/ffmpeg`
+
+This is not guaranteed to work on all devices. Please see [FFmpeg's website](https://ffmpeg.org/) for instructions to install manually.
+
 ## Usage
 
 **Important:** VoiceFixer can only process files in the `wav` format. We recommend using `ffmpeg` library to convert `mp3`s to `wav`s. We’re working on supporting this.
 
 ### Command Line
+
+By default, if no output path is specified, the file will be saved to `outfile.wav`.
 
 Process a file:
 
