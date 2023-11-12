@@ -4,7 +4,7 @@
 
 # <img src="https://github.com/fakerybakery/voicefixer/assets/76186054/499b358d-0063-45bc-925b-d4136c05af34" width="30"> VoiceFixer 2
 
-Welcome to VoiceFixer 2, the next generation of VoiceFixer. VoiceFixer is a general speech restoration tool, using AI to remove background noise, fix degraded speech, enhance audio quality from old recordings, upscale low resolution, and more, all in one model!
+Welcome to VoiceFixer 2, the next generation of VoiceFixer. VoiceFixer is a general speech restoration tool, using AI to remove background noise, fix degraded speech, enhance audio quality from old recordings, upscale audio resolution, and more, all in one model!
 
 VoiceFixer aims to restore human speech, regardless of how seriously degraded it is. It can handle noise, reverberation, low resolution, and clipping effect within one model!
 
@@ -23,6 +23,7 @@ We’ve added the following features in VoiceFixer 2:
 
 ## Changelog
 
+* Nov 11, 2023: Publish to PyPI
 * Nov 11, 2023: Add progress bar support (requires `ffmpeg`) (see TODO below)
 * Nov 11, 2023: Add preliminary MP3 support (requires `ffmpeg`) (see TODO below)
 * Nov 11, 2023: Fix CLI issue (see TODO below)
@@ -34,8 +35,9 @@ We’ve added the following features in VoiceFixer 2:
 Here's what we still need to do - feel free to contribute:
 
 - [ ] Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
-- [ ] Use latest version of librosa (probably pretty important)
-- [ ] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
+- [ ] Use latest version of librosa (probably pretty important, here's the issue the model doesn't work with latest torchlibrosa and the old torchlibrosa doesn't work with the latest librosa. need to completely retrain the model probably or change model python file)
+- [ ] Add MP3 support for folders
+- [x] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
 - [x] Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
 - [x] Implement .mp3 support (currently only supports .wav) - probably won't be that hard - just need to use pydub. good beginner contribution!
 - [x] Fix CLI instead of copying to /bin use CLI like [this](https://github.com/fakerybakery/simplesplit/blob/main/setup.py)
@@ -160,3 +162,8 @@ VoiceFixer 2 is licensed under the New Open-Source "Copyleft" License (Commercia
 I recognize that there may be issues in relicensing VoiceFixer, however I'm pretty sure the MIT license allows that since there's no specific clause disallowing relicensing. **However, I only copyright and license the modifications made from the original VoiceFixer repository.** This means that if you remove all my modifications you can use it under the MIT license. However, if you removed all my modifications, you might as well just download the original repository.
 
 The main reason why I decided to switch is because I didn't want something as restrictive as GPL/LGPL but BSD/MIT felt too weak. If you want an exception, its probably fine but please contact me first. Thanks!
+
+
+## Note
+
+Maintenance of VoiceFixer 2 is sponsored by [NeuralVox](https://github.com/NeuralVox).
