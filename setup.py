@@ -8,7 +8,7 @@ URL = "https://github.com/fakerybakery/voicefixer"
 EMAIL = "me@mrfake.name"
 AUTHOR = "mrfakename"
 REQUIRES_PYTHON = ">=3.7.0"
-VERSION = "2.1.0"
+VERSION = "2.1.1"
 REQUIRED = [
     "matplotlib",
     "torch>=1.7.0",
