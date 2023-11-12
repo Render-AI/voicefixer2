@@ -9,7 +9,6 @@ AUTHOR = "mrfakename"
 REQUIRES_PYTHON = ">=3.7.0"
 VERSION = "2.1.0"
 REQUIRED = [
-    "librosa @ git+https://github.com/fakerybakery/librosa",
     "matplotlib",
     "torch>=1.7.0",
     "progressbar",
@@ -51,7 +50,6 @@ setup(
     include_package_data=True,
     license="NOSCL-C-2.0",
     classifiers=[
-        "License :: NOSCL-C-2.0 License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
