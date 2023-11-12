@@ -23,6 +23,7 @@ We’ve added the following features in VoiceFixer 2:
 
 ## Changelog
 
+* Nov 11, 2023: Publish to PyPI
 * Nov 11, 2023: Add progress bar support (requires `ffmpeg`) (see TODO below)
 * Nov 11, 2023: Add preliminary MP3 support (requires `ffmpeg`) (see TODO below)
 * Nov 11, 2023: Fix CLI issue (see TODO below)
@@ -34,8 +35,9 @@ We’ve added the following features in VoiceFixer 2:
 Here's what we still need to do - feel free to contribute:
 
 - [ ] Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
-- [ ] Use latest version of librosa (probably pretty important)
-- [ ] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
+- [ ] Use latest version of librosa (probably pretty important, here's the issue the model doesn't work with latest torchlibrosa and the old torchlibrosa doesn't work with the latest librosa. need to completely retrain the model probably or change model python file)
+- [ ] Add MP3 support for folders
+- [x] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
 - [x] Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
 - [x] Implement .mp3 support (currently only supports .wav) - probably won't be that hard - just need to use pydub. good beginner contribution!
 - [x] Fix CLI instead of copying to /bin use CLI like [this](https://github.com/fakerybakery/simplesplit/blob/main/setup.py)
