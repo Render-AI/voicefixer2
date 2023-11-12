@@ -59,7 +59,7 @@ for mode in [0, 1, 2]:
         check("output_mode_" + str(mode) + ".flac")
 
     if torch.cuda.is_available():
-        print("Using GPU:")
+        # print("Using GPU:")
         voicefixer.restore(
             input=os.path.join(git_root, "test/utterance/original/original.flac"),
             # low quality .wav/.flac file
@@ -91,7 +91,7 @@ vocoder.oracle(
 check("oracle.flac")
 
 if torch.cuda.is_available():
-    print("Using GPU:")
+    # print("Using GPU:")
     vocoder.oracle(
         fpath=os.path.join(git_root, "test/utterance/original/p360_001_mic1.flac"),
         out_path=os.path.join(git_root, "test/utterance/output/oracle.flac"),

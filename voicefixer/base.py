@@ -3,6 +3,7 @@ from voicefixer.tools.pytorch_util import *
 from voicefixer.tools.wav import *
 from voicefixer.restorer.model import VoiceFixer as voicefixer_fe
 import os
+from tqdm import tqdm
 
 EPS = 1e-8
 
@@ -114,7 +115,8 @@ class VoiceFixer(nn.Module):
         res = []
         seg_length = 44100 * 30
         break_point = seg_length
-        while break_point < wav_10k.shape[0] + seg_length:
+        # while break_point < wav_10k.shape[0] + seg_length:
+        for _ in tqdm(range(break_point, wav_10k.shape[0] + seg_length, seg_length)):
             segment = wav_10k[break_point - seg_length : break_point]
             if mode == 1:
                 segment = self.remove_higher_frequency(segment)
