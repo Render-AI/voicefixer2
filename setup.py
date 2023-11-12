@@ -1,7 +1,7 @@
 import io
 import os
 from setuptools import find_packages, setup
-NAME = "voicefixer"
+NAME = "voicefixer2"
 DESCRIPTION = "General speech restoration toolkit."
 URL = "https://github.com/fakerybakery/voicefixer"
 EMAIL = "me@mrfake.name"
@@ -63,5 +63,4 @@ setup(
             "voicefixer = voicefixer.cli:main",
         ],
     },
-    # scripts=['bin/voicefixer.cmd', "bin/voicefixer"]
 )
