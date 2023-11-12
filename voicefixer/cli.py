@@ -6,6 +6,7 @@ import torch
 import os
 import sys
 
+
 def writefile(infile, outfile, mode, append_mode, cuda, voicefixer, verbose=False):
     if append_mode is True:
         outbasename, outext = os.path.splitext(os.path.basename(outfile))
@@ -15,6 +16,7 @@ def writefile(infile, outfile, mode, append_mode, cuda, voicefixer, verbose=Fals
     if verbose:
         print("Processing {}, mode={}".format(infile, mode))
     voicefixer.restore(input=infile, output=outfile, cuda=cuda, mode=int(mode))
+
 
 def check_arguments(args):
     process_file, process_folder = len(args.infile) != 0, len(args.infolder) != 0
@@ -26,7 +28,9 @@ def check_arguments(args):
     #     process_file or process_folder
     # ), "Error: You need to specify a input file path (--infile) or a input folder path (--infolder) to proceed. For more information please run: voicefixer -h"
     if not (process_file or process_file):
-        print("Error: Please specify an input file path (--infile) or an input folder path (--infolder) to proceed. For more information, please run: voicefixer -h")
+        print(
+            "Error: Please specify an input file path (--infile) or an input folder path (--infolder) to proceed. For more information, please run: voicefixer -h"
+        )
         sys.exit(0)
 
     # if(args.cuda and not torch.cuda.is_available()):
@@ -86,7 +90,12 @@ def main():
     parser.add_argument(
         "--mode", help="mode", choices=["0", "1", "2", "all"], default="0"
     )
-    parser.add_argument('--disable-cuda', help='Set this flag if you do not want to use your gpu.', default=False, action="store_true")
+    parser.add_argument(
+        "--disable-cuda",
+        help="Set this flag if you do not want to use your gpu.",
+        default=False,
+        action="store_true",
+    )
     parser.add_argument(
         "--silent",
         help="Set this flag if you do not want to see any message.",
@@ -99,14 +108,17 @@ def main():
     #     parser.print_help()
     #     sys.exit(0)
 
-    cuda = (torch.cuda.is_available() and not args.disable_cuda) or (torch.backends.mps.is_available() and not args.disable_cuda)
+    cuda = (torch.cuda.is_available() and not args.disable_cuda) or (
+        torch.backends.mps.is_available() and not args.disable_cuda
+    )
     process_file, process_folder = check_arguments(args)
     if not args.silent:
         print("Initializing VoiceFixer")
     voicefixer = VoiceFixer()
 
     if not args.silent:
-        print("""
+        print(
+            """
 ██╗   ██╗███████╗    ██╗   ██╗██████╗ 
 ██║   ██║██╔════╝    ██║   ██║╚════██╗
 ██║   ██║█████╗      ██║   ██║ █████╔╝
@@ -122,14 +134,17 @@ Basic Usage:
       
   $ voicefixer -i <infile.wav> -o <outfile.wav>
 
-""")
+"""
+        )
         print("Start processing the input file %s." % args.infile)
 
     if process_file:
         audioext = os.path.splitext(os.path.basename(args.infile))[-1]
         if audioext.lower() != ".wav":
             if not args.silent:
-                print("NOTE: .wav file recommended. You may need to install ffmpeg to support other formats.")
+                print(
+                    "NOTE: .wav file recommended. You may need to install ffmpeg to support other formats."
+                )
             # raise ValueError(
             #     "Error: Error processing the input file. We only support the .wav format currently. Please convert your %s format to .wav. Thanks."
             #     % audioext
@@ -185,11 +200,18 @@ Basic Usage:
                     )
             else:
                 writefile(
-                    in_file, out_file, args.mode, False, cuda, voicefixer, verbose=not args.silent
+                    in_file,
+                    out_file,
+                    args.mode,
+                    False,
+                    cuda,
+                    voicefixer,
+                    verbose=not args.silent,
                 )
 
     if not args.silent:
         print("Done")
+
 
 if __name__ == "__main__":
     main()

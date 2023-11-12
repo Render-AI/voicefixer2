@@ -179,7 +179,7 @@ def init_gru(rnn):
         (length, fan_out) = tensor.shape
         fan_in = length // len(init_funcs)
 
-        for (i, init_func) in enumerate(init_funcs):
+        for i, init_func in enumerate(init_funcs):
             init_func(tensor[i * fan_in : (i + 1) * fan_in, :])
 
     def _inner_uniform(tensor):

@@ -4,6 +4,7 @@ import torch.nn as nn
 import numpy as np
 from voicefixer.tools.modules.pqmf import PQMF
 
+
 class FDomainHelper(nn.Module):
     def __init__(
         self,

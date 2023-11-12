@@ -36,8 +36,8 @@ def save_wave(frames: np.ndarray, fname, sample_rate=44100):
     frames = frames.astype(np.short)
     if len(frames.shape) >= 3:
         frames = frames[0, ...]
-    if not fname.endswith('.wav'):
-        with tempfile.NamedTemporaryFile(suffix='.wav') as file:
+    if not fname.endswith(".wav"):
+        with tempfile.NamedTemporaryFile(suffix=".wav") as file:
             sf.write(file.name, frames, samplerate=sample_rate)
             pydub.AudioSegment.from_wav(file.name).export(fname)
     else:

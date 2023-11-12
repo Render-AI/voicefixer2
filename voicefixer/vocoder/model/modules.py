@@ -5,6 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from voicefixer.vocoder.config import Config
 
+
 # From xin wang of nii
 class SineGen(torch.nn.Module):
     """Definition of sine generator
@@ -432,7 +433,6 @@ class DownsampleNet(nn.Module):
 
 class UpsampleNet(nn.Module):
     def __init__(self, input_size, output_size, upsample_factor, hp=None, index=0):
-
         super(UpsampleNet, self).__init__()
         self.up_type = Config.up_type
         self.use_smooth = Config.use_smooth
@@ -499,7 +499,6 @@ class UpsampleNet(nn.Module):
             )
 
     def forward(self, inputs):
-
         if not self.org:
             inputs = inputs + torch.sin(inputs)
             B, C, T = inputs.size()
@@ -694,7 +693,6 @@ class WaveNet(nn.Module):
         return self.wavenet(x, c)
 
     def wavenet(self, tensor, c=None):
-
         h = self.front_conv(tensor)
         if self.use_downup:
             h = self.downup_conv(h)

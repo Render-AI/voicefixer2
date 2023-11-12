@@ -1,6 +1,7 @@
 import io
 import os
 from setuptools import find_packages, setup
+
 NAME = "voicefixer2"
 DESCRIPTION = "General speech restoration toolkit."
 URL = "https://github.com/fakerybakery/voicefixer"
@@ -16,7 +17,7 @@ REQUIRED = [
     "GitPython",
     "streamlit",
     "pyyaml",
-    "pydub"
+    "pydub",
 ]
 EXTRAS = {}
 here = os.path.abspath(os.path.dirname(__file__))
