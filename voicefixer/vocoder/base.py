@@ -46,7 +46,6 @@ class Vocoder(nn.Module):
         """
         assert mel.size()[-1] == 128
         check_cuda_availability(cuda=cuda)
-        print("going fwd")
         self.model = try_tensor_cuda(self.model, cuda=cuda)
         mel = try_tensor_cuda(mel, cuda=cuda)
         self.weight_torch = self.weight_torch.type_as(mel)
