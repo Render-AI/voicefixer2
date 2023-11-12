@@ -7,7 +7,7 @@ URL = "https://github.com/fakerybakery/voicefixer"
 EMAIL = "me@mrfake.name"
 AUTHOR = "mrfakename"
 REQUIRES_PYTHON = ">=3.7.0"
-VERSION = "2.0.0"
+VERSION = "2.1.0"
 REQUIRED = [
     "librosa @ git+https://github.com/fakerybakery/librosa",
     "matplotlib",
