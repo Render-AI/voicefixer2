@@ -114,7 +114,8 @@ class VoiceFixer(nn.Module):
         seg_length = 44100 * 30
         break_point = seg_length
         # while break_point < wav_10k.shape[0] + seg_length:
-        for _ in tqdm(range(break_point, wav_10k.shape[0] + seg_length, seg_length)):
+        # for _ in tqdm(range(break_point, wav_10k.shape[0] + seg_length, seg_length)):
+        for _ in (range(break_point, wav_10k.shape[0] + seg_length, seg_length) if (len(range(break_point, wav_10k.shape[0] + seg_length, seg_length)) == 1) else tqdm(range(break_point, wav_10k.shape[0] + seg_length, seg_length))):
             segment = wav_10k[break_point - seg_length : break_point]
             if mode == 1:
                 segment = self.remove_higher_frequency(segment)

@@ -117,25 +117,6 @@ def main():
     voicefixer = VoiceFixer()
 
     if not args.silent:
-        print(
-            """
-██╗   ██╗███████╗    ██╗   ██╗██████╗ 
-██║   ██║██╔════╝    ██║   ██║╚════██╗
-██║   ██║█████╗      ██║   ██║ █████╔╝
-╚██╗ ██╔╝██╔══╝      ╚██╗ ██╔╝██╔═══╝ 
- ╚████╔╝ ██║          ╚████╔╝ ███████╗
-  ╚═══╝  ╚═╝           ╚═══╝  ╚══════╝
-                                      
-Created by Haohe Liu. Modified by mrfakename.
-      
-  https://github.com/fakerybakery/voicefixer
-      
-Basic Usage:
-      
-  $ voicefixer -i <infile.wav> -o <outfile.wav>
-
-"""
-        )
         print("Start processing the input file %s." % args.infile)
 
     if process_file:
