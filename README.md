@@ -4,7 +4,7 @@
 
 # <img src="https://github.com/fakerybakery/voicefixer/assets/76186054/499b358d-0063-45bc-925b-d4136c05af34" width="30"> VoiceFixer 2
 
-Welcome to VoiceFixer 2, the next generation of VoiceFixer. VoiceFixer is a general speech restoration tool, using AI to remove background noise, fix degraded speech, enhance audio quality from old recordings, upscaling audio resolution, and more, all in one model!
+Welcome to VoiceFixer 2, the next generation of VoiceFixer. VoiceFixer is a general speech restoration tool, using AI to remove background noise, fix degraded speech, enhance audio quality from old recordings, upscale audio resolution, and more, all in one model!
 
 VoiceFixer aims to restore human speech, regardless of how seriously degraded it is. It can handle noise, reverberation, low resolution, and clipping effect within one model!
 
