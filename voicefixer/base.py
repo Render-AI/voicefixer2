@@ -101,7 +101,7 @@ class VoiceFixer(nn.Module):
         return librosa.istft(stft)
 
     @torch.no_grad()
-    def restore_inmem(self, wav_10k, cuda=False, mode=0, your_vocoder_func=None):
+    def restore_inmem(self, wav_10k, cuda=False, mode=0, your_vocoder_func=None, tqdm=tqdm):
         check_cuda_availability(cuda=cuda)
         self._model = try_tensor_cuda(self._model, cuda=cuda)
         if mode == 0:
@@ -137,7 +137,7 @@ class VoiceFixer(nn.Module):
         out = torch.cat(res, -1)
         return tensor2numpy(out.squeeze(0))
 
-    def restore(self, input, output, cuda=False, mode=0, your_vocoder_func=None):
+    def restore(self, input, output, cuda=False, mode=0, your_vocoder_func=None, tqdm=tqdm):
         wav_10k = self._load_wav(input, sample_rate=44100)
         out_np_wav = self.restore_inmem(
             wav_10k, cuda=cuda, mode=mode, your_vocoder_func=your_vocoder_func
