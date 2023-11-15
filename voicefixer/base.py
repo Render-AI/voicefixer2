@@ -140,6 +140,6 @@ class VoiceFixer(nn.Module):
     def restore(self, input, output, cuda=False, mode=0, your_vocoder_func=None, tqdm=tqdm):
         wav_10k = self._load_wav(input, sample_rate=44100)
         out_np_wav = self.restore_inmem(
-            wav_10k, cuda=cuda, mode=mode, your_vocoder_func=your_vocoder_func
+            wav_10k, cuda=cuda, mode=mode, your_vocoder_func=your_vocoder_func, tqdm=tqdm
         )
         save_wave(out_np_wav, fname=output, sample_rate=44100)
