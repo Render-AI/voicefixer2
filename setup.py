@@ -18,7 +18,8 @@ REQUIRED = [
     "streamlit",
     "pyyaml",
     "pydub",
-    "scipy"
+    "scipy",
+    "soundfile",
 ]
 EXTRAS = {}
 here = os.path.abspath(os.path.dirname(__file__))
