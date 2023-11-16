@@ -29,6 +29,7 @@ We’ve added the following features in VoiceFixer 2:
 
 ## Changelog
 
+* Nov 16, 2023: Upgrade librosa + torch
 * Nov 11, 2023: Publish to PyPI
 * Nov 11, 2023: Add progress bar support (requires `ffmpeg`) (see TODO below)
 * Nov 11, 2023: Add preliminary MP3 support (requires `ffmpeg`) (see TODO below)
