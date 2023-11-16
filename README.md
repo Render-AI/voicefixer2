@@ -41,6 +41,7 @@ Here's what we still need to do - feel free to contribute:
 - [ ] Add MP3 support for folders
 - [ ] Allow user to restore an object (don't require a file)
 - [ ] Support Windows (mostly file paths) - maybe use [cached_path](https://github.com/allenai/cached_path)
+- [ ] Switch models from Zenodo to Hugging Face to increase speed and control over models (in progress)
 - [x] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
 - [x] Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
 - [x] Implement .mp3 support (currently only supports .wav) - probably won't be that hard - just need to use pydub. good beginner contribution!
