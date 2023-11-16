@@ -60,6 +60,14 @@ Here's what we still need to do - feel free to contribute:
 
 ## Installation
 
+**Don't want to install the package, but just want to try it out?**
+
+Use our free API (no API key req.d) for audio files under 5 minutes. Non-commercial use only, audio may be collected. Details on [webpage](https://huggingface.co/spaces/voicefixer/voicefixer-api).
+
+```
+curl -X POST -H "Content-Type: multipart/form-data" -F "file=@test.mp3" https://voicefixer-voicefixer-api.hf.space/process_audio > processed_audio.wav
+```
+
 **NOTE: If you have any issues on Apple Silicon, please install PyTorch Nightly (`pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cpu`)**
 
 You can install our package via. PyPI (Python Package Index), the official Python package index.
