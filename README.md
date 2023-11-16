@@ -21,6 +21,10 @@ The [original version of VoiceFixer](https://github.com/haoheliu/voicefixer) con
 We’ve added the following features in VoiceFixer 2:
 
 * We’ve added MPS support, which means you can use GPU acceleration on M1 macs. You can enable this by setting the `cuda` parameter to `True`. It’s automatically enabled when using the command line interface (CLI).
+* We've added a progress bar through TQDM for longer audio
+* We now support non-WAV files (ie MP3)
+* We're now using `cached_path` instead of hard-coding a cache path to increase OS support
+* We're featuring faster model downloads w/ Hugging Face
 * More features coming soon!
 
 ## Changelog
