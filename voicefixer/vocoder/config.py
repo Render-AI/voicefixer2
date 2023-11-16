@@ -9,7 +9,11 @@ class Config:
     @classmethod
     def refresh(cls, sr):
         if sr == 44100:
-            Config.ckpt = str(cached_path('hf://voicefixer/voicefixer/vocoder/model.ckpt-1490000_trimed.pt'))
+            Config.ckpt = str(
+                cached_path(
+                    "hf://voicefixer/voicefixer/vocoder/model.ckpt-1490000_trimed.pt"
+                )
+            )
             Config.cond_channels = 512
             Config.m_channels = 768
             Config.resstack_depth = [8, 8, 8, 8]

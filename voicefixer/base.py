@@ -13,7 +13,9 @@ class VoiceFixer(nn.Module):
     def __init__(self):
         super(VoiceFixer, self).__init__()
         self._model = voicefixer_fe(channels=2, sample_rate=44100)
-        self.analysis_module_ckpt = str(cached_path("hf://voicefixer/voicefixer/model/vf.ckpt"))
+        self.analysis_module_ckpt = str(
+            cached_path("hf://voicefixer/voicefixer/model/vf.ckpt")
+        )
         if not os.path.exists(self.analysis_module_ckpt):
             raise RuntimeError(
                 "Error 0: The checkpoint for analysis module (vf.ckpt) is not found in ~/.cache/voicefixer/analysis_module/checkpoints."
@@ -22,7 +24,9 @@ class VoiceFixer(nn.Module):
         # self._model.eval()
         saved_state_dict = torch.load(self.analysis_module_ckpt)
         model_state_dict = self._model.state_dict()
-        new_state_dict = {k: v for k, v in saved_state_dict.items() if k in model_state_dict}
+        new_state_dict = {
+            k: v for k, v in saved_state_dict.items() if k in model_state_dict
+        }
         model_state_dict.update(new_state_dict)
         self._model.load_state_dict(model_state_dict, strict=False)
         self._model.eval()
@@ -102,7 +106,9 @@ class VoiceFixer(nn.Module):
         return librosa.istft(stft)
 
     @torch.no_grad()
-    def restore_inmem(self, wav_10k, cuda=False, mode=0, your_vocoder_func=None, tqdm=tqdm):
+    def restore_inmem(
+        self, wav_10k, cuda=False, mode=0, your_vocoder_func=None, tqdm=tqdm
+    ):
         check_cuda_availability(cuda=cuda)
         self._model = try_tensor_cuda(self._model, cuda=cuda)
         if mode == 0:
@@ -116,7 +122,11 @@ class VoiceFixer(nn.Module):
         break_point = seg_length
         # while break_point < wav_10k.shape[0] + seg_length:
         # for _ in tqdm(range(break_point, wav_10k.shape[0] + seg_length, seg_length)):
-        for _ in (range(break_point, wav_10k.shape[0] + seg_length, seg_length) if (len(range(break_point, wav_10k.shape[0] + seg_length, seg_length)) == 1) else tqdm(range(break_point, wav_10k.shape[0] + seg_length, seg_length))):
+        for _ in (
+            range(break_point, wav_10k.shape[0] + seg_length, seg_length)
+            if (len(range(break_point, wav_10k.shape[0] + seg_length, seg_length)) == 1)
+            else tqdm(range(break_point, wav_10k.shape[0] + seg_length, seg_length))
+        ):
             segment = wav_10k[break_point - seg_length : break_point]
             if mode == 1:
                 segment = self.remove_higher_frequency(segment)
@@ -138,9 +148,15 @@ class VoiceFixer(nn.Module):
         out = torch.cat(res, -1)
         return tensor2numpy(out.squeeze(0))
 
-    def restore(self, input, output, cuda=False, mode=0, your_vocoder_func=None, tqdm=tqdm):
+    def restore(
+        self, input, output, cuda=False, mode=0, your_vocoder_func=None, tqdm=tqdm
+    ):
         wav_10k = self._load_wav(input, sample_rate=44100)
         out_np_wav = self.restore_inmem(
-            wav_10k, cuda=cuda, mode=mode, your_vocoder_func=your_vocoder_func, tqdm=tqdm
+            wav_10k,
+            cuda=cuda,
+            mode=mode,
+            your_vocoder_func=your_vocoder_func,
+            tqdm=tqdm,
         )
         save_wave(out_np_wav, fname=output, sample_rate=44100)

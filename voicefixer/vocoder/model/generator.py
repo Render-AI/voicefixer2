@@ -72,7 +72,9 @@ class Generator(nn.Module):
         if self.out_channels == 1:
             self.generator = nn.Sequential(
                 nn.ReflectionPad1d(3),
-                nn.utils.parametrizations.weight_norm(nn.Conv1d(in_channels, channels, kernel_size=7)),
+                nn.utils.parametrizations.weight_norm(
+                    nn.Conv1d(in_channels, channels, kernel_size=7)
+                ),
                 act,
                 UpsampleNet(channels, channels // 2, self.upsample_scales[0], hp, 0),
                 ResStack(channels // 2, kernel_size[0], self.resstack_depth[0], hp),
@@ -102,7 +104,9 @@ class Generator(nn.Module):
             channels = Config.m_channels
             self.generator = nn.Sequential(
                 nn.ReflectionPad1d(3),
-                nn.utils.parametrizations.weight_norm(nn.Conv1d(in_channels, channels, kernel_size=7)),
+                nn.utils.parametrizations.weight_norm(
+                    nn.Conv1d(in_channels, channels, kernel_size=7)
+                ),
                 act,
                 UpsampleNet(channels, channels // 2, self.upsample_scales[0], hp),
                 ResStack(channels // 2, kernel_size[0], self.resstack_depth[0], hp),

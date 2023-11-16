@@ -790,7 +790,9 @@ class ResBlock(nn.Module):
         if self.local_conditioning:
             self.filter_conv_c = nn.Conv1d(cin_channels, out_channels, kernel_size=1)
             self.gate_conv_c = nn.Conv1d(cin_channels, out_channels, kernel_size=1)
-            self.filter_conv_c = nn.utils.parametrizations.weight_norm(self.filter_conv_c)
+            self.filter_conv_c = nn.utils.parametrizations.weight_norm(
+                self.filter_conv_c
+            )
             self.gate_conv_c = nn.utils.parametrizations.weight_norm(self.gate_conv_c)
 
     def forward(self, tensor, c=None):
@@ -872,7 +874,9 @@ class ResStack2D(nn.Module):
                         )
                     ),
                     nn.LeakyReLU(),
-                    nn.utils.parametrizations.weight_norm(nn.Conv2d(self.channels, 1, kernel_size=1)),
+                    nn.utils.parametrizations.weight_norm(
+                        nn.Conv2d(self.channels, 1, kernel_size=1)
+                    ),
                 )
                 for i in range(resstack_depth)
             ]
