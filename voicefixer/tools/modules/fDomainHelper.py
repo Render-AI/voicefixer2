@@ -15,7 +15,7 @@ class FDomainHelper(nn.Module):
         window="hann",
         freeze_parameters=True,
         subband=None,
-        root="/Users/admin/Documents/projects/",
+        root="",
     ):
         super(FDomainHelper, self).__init__()
         self.subband = subband
