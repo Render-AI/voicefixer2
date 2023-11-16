@@ -84,14 +84,22 @@ voicefixer2
 or
 
 ```
-git+https://github.com/fakerybakery/voicefixer
+git+https://github.com/voicefixer/voicefixer
 ```
 
 or, in setup.py
 
 ```python
 [
-    'voicefixer2 @ git+https://github.com/fakerybakery/voicefixer',
+    'voicefixer2 @ git+https://github.com/voicefixer/voicefixer',
+]
+```
+
+or simply
+
+```python
+[
+    'voicefixer2',
 ]
 ```
 
