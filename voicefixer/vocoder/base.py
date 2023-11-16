@@ -15,8 +15,7 @@ class Vocoder(nn.Module):
         if not os.path.exists(Config.ckpt):
             raise RuntimeError(
                 "Error 1: The checkpoint for synthesis module / vocoder (model.ckpt-1490000_trimed) is not found in ~/.cache/voicefixer/synthesis_module/44100. \
-                                By default the checkpoint should be download automatically by this program. Something bad may happened. Apologies for the inconvenience.\
-                                But don't worry! Alternatively you can download it directly from Zenodo: https://zenodo.org/record/5600188/files/model.ckpt-1490000_trimed.pt?download=1"
+                                By default the checkpoint should be download automatically by this program. Something bad may happened. Apologies for the inconvenience."
             )
         self._load_pretrain(Config.ckpt)
         self.weight_torch = Config.get_mel_weight_torch(percent=1.0)[
