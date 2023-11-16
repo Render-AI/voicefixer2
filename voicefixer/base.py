@@ -3,6 +3,7 @@ from voicefixer.tools.pytorch_util import *
 from voicefixer.tools.wav import *
 from voicefixer.restorer.model import VoiceFixer as voicefixer_fe
 import os
+from cached_path import cached_path
 from tqdm import tqdm
 
 EPS = 1e-8
@@ -12,16 +13,10 @@ class VoiceFixer(nn.Module):
     def __init__(self):
         super(VoiceFixer, self).__init__()
         self._model = voicefixer_fe(channels=2, sample_rate=44100)
-        # print(os.path.join(os.path.expanduser('~'), ".cache/voicefixer/analysis_module/checkpoints/epoch=15_trimed_bn.ckpt"))
-        self.analysis_module_ckpt = os.path.join(
-            os.path.expanduser("~"),
-            ".cache/voicefixer/analysis_module/checkpoints/vf.ckpt",
-        )
+        self.analysis_module_ckpt = str(cached_path("hf://voicefixer/voicefixer/model/vf.ckpt"))
         if not os.path.exists(self.analysis_module_ckpt):
             raise RuntimeError(
-                "Error 0: The checkpoint for analysis module (vf.ckpt) is not found in ~/.cache/voicefixer/analysis_module/checkpoints. \
-                                By default the checkpoint should be download automatically by this program. Something bad may happened.\
-                                But don't worry! Alternatively you can download it directly from Zenodo: https://zenodo.org/record/5600188/files/vf.ckpt?download=1."
+                "Error 0: The checkpoint for analysis module (vf.ckpt) is not found in ~/.cache/voicefixer/analysis_module/checkpoints."
             )
         self._model.load_state_dict(torch.load(self.analysis_module_ckpt))
         self._model.eval()

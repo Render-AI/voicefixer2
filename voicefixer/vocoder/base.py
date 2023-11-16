@@ -12,11 +12,6 @@ class Vocoder(nn.Module):
         super(Vocoder, self).__init__()
         Config.refresh(sample_rate)
         self.rate = sample_rate
-        if not os.path.exists(Config.ckpt):
-            raise RuntimeError(
-                "Error 1: The checkpoint for synthesis module / vocoder (model.ckpt-1490000_trimed) is not found in ~/.cache/voicefixer/synthesis_module/44100. \
-                                By default the checkpoint should be download automatically by this program. Something bad may happened. Apologies for the inconvenience."
-            )
         self._load_pretrain(Config.ckpt)
         self.weight_torch = Config.get_mel_weight_torch(percent=1.0)[
             None, None, None, ...
@@ -81,7 +76,3 @@ class Vocoder(nn.Module):
 if __name__ == "__main__":
     model = Vocoder(sample_rate=44100)
     print(model.device)
-    # model.load_pretrain(Config.ckpt)
-    # model.oracle(path="/Users/liuhaohe/Desktop/test.wav",
-    #         sample_rate=44100,
-    #         save_dir="/Users/liuhaohe/Desktop/test_vocoder.wav")
