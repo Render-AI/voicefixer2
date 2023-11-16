@@ -1,8 +1,8 @@
-[Experimental Demo](https://huggingface.co/spaces/voicefixer/voicefixer)
+[Website](https://voicefixer.github.io/) / [Live Demo](https://huggingface.co/spaces/voicefixer/voicefixer) / [Free API](https://huggingface.co/spaces/voicefixer/voicefixer-api)
 
 **Important:** The maintainers(s) of this repository are not affiliated or connected with the original version of VoiceFixer.
 
-**Note:** We are actively accepting contributions! Please check the To Do list for how you can contribute!
+**Note:** We are actively accepting contributions (+ contributors)! Please check the To Do list for how you can contribute!
 
 # <img src="https://camo.githubusercontent.com/a3b2d4da7e2d171fd691b5d2da5af46013dcb7904132485a3af7d14b6468aeac/68747470733a2f2f6769746875622d70726f64756374696f6e2d757365722d61737365742d3632313064662e73332e616d617a6f6e6177732e636f6d2f37363138363035342f3237303230343034382d34393962333538642d303036332d343562632d393235622d6434313336633035616633342e706e67" width="30"> VoiceFixer 2
 
@@ -44,6 +44,8 @@ Here's what we still need to do - feel free to contribute:
 - [x] Use latest version of librosa (probably pretty important, here's the issue the model doesn't work with latest torchlibrosa and the old torchlibrosa doesn't work with the latest librosa. need to completely retrain the model probably or change model python file) - fixed thanks to @manmay-nakhashi
 - [ ] Add MP3 support for folders
 - [ ] Allow user to restore an object (don't require a file)
+- [ ] Update model to make [modifying state dict](https://github.com/voicefixer/voicefixer/commit/1b8c384bc2f34645e72c67e46db92b3accd20613) unnecessary - loading it twice increases VRAM usage
+- [ ] [Realtime support](https://github.com/haoheliu/voicefixer_main/issues/11)
 - [ ] Support Windows (mostly file paths) - maybe use [cached_path](https://github.com/allenai/cached_path)
 - [x] Switch models from Zenodo to Hugging Face to increase speed and control over models (in progress)
 - [x] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
@@ -84,14 +86,22 @@ voicefixer2
 or
 
 ```
-git+https://github.com/fakerybakery/voicefixer
+git+https://github.com/voicefixer/voicefixer
 ```
 
 or, in setup.py
 
 ```python
 [
-    'voicefixer2 @ git+https://github.com/fakerybakery/voicefixer',
+    'voicefixer2 @ git+https://github.com/voicefixer/voicefixer',
+]
+```
+
+or simply
+
+```python
+[
+    'voicefixer2',
 ]
 ```
 
