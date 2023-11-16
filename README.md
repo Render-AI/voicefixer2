@@ -168,4 +168,4 @@ VoiceFixer 2 is licensed under the MIT license.
 
 ## Note
 
-Maintenance of VoiceFixer 2 is sponsored by [NeuralVox](https://github.com/NeuralVox).
+Maintenance of VoiceFixer 2 is powered by [NeuralVox](https://github.com/NeuralVox).
