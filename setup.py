@@ -14,14 +14,14 @@ REQUIRED = [
     "cached_path",
     "torch>=1.7.0",
     "progressbar",
-    "torchlibrosa==0.0.7",
+    "torchlibrosa",
     "GitPython",
     "streamlit",
     "pyyaml",
     "pydub",
     "scipy",
     "soundfile",
-    "vflibrosa",
+    "librosa",
 ]
 EXTRAS = {}
 here = os.path.abspath(os.path.dirname(__file__))
