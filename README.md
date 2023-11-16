@@ -39,6 +39,7 @@ Here's what we still need to do - feel free to contribute:
 - [ ] Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
 - [ ] Use latest version of librosa (probably pretty important, here's the issue the model doesn't work with latest torchlibrosa and the old torchlibrosa doesn't work with the latest librosa. need to completely retrain the model probably or change model python file)
 - [ ] Add MP3 support for folders
+- [ ] Allow user to restore an object (don't require a file)
 - [x] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
 - [x] Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
 - [x] Implement .mp3 support (currently only supports .wav) - probably won't be that hard - just need to use pydub. good beginner contribution!
