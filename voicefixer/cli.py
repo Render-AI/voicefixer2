@@ -13,8 +13,6 @@ def writefile(infile, outfile, mode, append_mode, cuda, voicefixer, verbose=Fals
         outfile = os.path.join(
             os.path.dirname(outfile), "{}-mode{}{}".format(outbasename, mode, outext)
         )
-    if verbose:
-        print("Processing {}, mode={}".format(infile, mode))
     voicefixer.restore(input=infile, output=outfile, cuda=cuda, mode=int(mode))
 
 
@@ -112,24 +110,9 @@ def main():
         torch.backends.mps.is_available() and not args.disable_cuda
     )
     process_file, process_folder = check_arguments(args)
-    if not args.silent:
-        print("Initializing VoiceFixer")
     voicefixer = VoiceFixer()
-
-    if not args.silent:
-        print("Start processing the input file %s." % args.infile)
-
     if process_file:
         audioext = os.path.splitext(os.path.basename(args.infile))[-1]
-        if audioext.lower() != ".wav":
-            if not args.silent:
-                print(
-                    "NOTE: .wav file recommended. You may need to install ffmpeg to support other formats."
-                )
-            # raise ValueError(
-            #     "Error: Error processing the input file. We only support the .wav format currently. Please convert your %s format to .wav. Thanks."
-            #     % audioext
-            # )
         if args.mode == "all":
             for file_mode in range(3):
                 writefile(
@@ -189,9 +172,6 @@ def main():
                     voicefixer,
                     verbose=not args.silent,
                 )
-
-    if not args.silent:
-        print("Done")
 
 
 if __name__ == "__main__":
