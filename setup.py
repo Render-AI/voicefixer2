@@ -21,6 +21,7 @@ REQUIRED = [
     "pydub",
     "scipy",
     "soundfile",
+    "vflibrosa",
 ]
 EXTRAS = {}
 here = os.path.abspath(os.path.dirname(__file__))
