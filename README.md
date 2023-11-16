@@ -57,6 +57,8 @@ Here's what we still need to do - feel free to contribute:
 
 ## Installation
 
+**NOTE: If you have any issues on Apple Silicon, please install PyTorch Nightly (`pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cpu`)**
+
 You can install our package via. PyPI (Python Package Index), the official Python package index.
 
 ```
