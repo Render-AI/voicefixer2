@@ -1,4 +1,4 @@
-[Experimental Demo](https://huggingface.co/spaces/voicefixer/voicefixer)
+[Live Demo](https://huggingface.co/spaces/voicefixer/voicefixer)
 
 **Important:** The maintainers(s) of this repository are not affiliated or connected with the original version of VoiceFixer.
 
