@@ -1,15 +1,3 @@
-#!/usr/bin/env python
-# -*- encoding: utf-8 -*-
-"""
-@File    :   __init__.py.py    
-@Contact :   haoheliu@gmail.com
-@License :   (C)Copyright 2020-2100
-
-@Modify Time      @Author    @Version    @Desciption
-------------      -------    --------    -----------
-9/14/21 12:31 AM   Haohe Liu      1.0         None
-"""
-
 import os
 import torch
 import urllib.request
@@ -20,7 +8,7 @@ meta = {
             os.path.expanduser("~"),
             ".cache/voicefixer/analysis_module/checkpoints/vf.ckpt",
         ),
-        "url": "https://zenodo.org/record/5600188/files/vf.ckpt?download=1",
+        "url": "https://huggingface.co/voicefixer/voicefixer/resolve/main/model/vf.ckpt?download=true",
     },
 }
 
