@@ -164,14 +164,7 @@ for mode in [0,1,2]:
 
 ## License
 
-The original version of VoiceFixer was licensed under the permissive MIT license, available [here](VOICEFIXER_LIC_MIT).
-
-VoiceFixer 2 is licensed under the New Open-Source "Copyleft" License (Commercial Edition), Version 2.0 (NOSCL-C-2.0), available [here](LICENSE). The NOSCL license family is a **permissive** ("weak") copyleft license. The NOSCL-C-2.0 license allows for commercial use, with a few restrictions. Although NOSCL-C-2.0 requires derivatives to have the same license, it allows software that "links" to this library to be licensed under different license. For example, if you reference this library in your software, you can redistribute your software under a different license, as long as you don't bundle the library into your software (this is not a replacement for the license, and there are more restrictions). More details can be found [here](LICENSE).
-
-I recognize that there may be issues in relicensing VoiceFixer, however I'm pretty sure the MIT license allows that since there's no specific clause disallowing relicensing. **However, I only copyright and license the modifications made from the original VoiceFixer repository.** This means that if you remove all my modifications you can use it under the MIT license. However, if you removed all my modifications, you might as well just download the original repository.
-
-The main reason why I decided to switch is because I didn't want something as restrictive as GPL/LGPL but BSD/MIT felt too weak. If you want an exception, its probably fine but please contact me first. Thanks!
-
+VoiceFixer 2 is licensed under the MIT license.
 
 ## Note
 
