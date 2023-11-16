@@ -1,4 +1,4 @@
-[Live Demo](https://huggingface.co/spaces/voicefixer/voicefixer)
+[Website](https://voicefixer.github.io/) / [Live Demo](https://huggingface.co/spaces/voicefixer/voicefixer) / [Free API](https://huggingface.co/spaces/voicefixer/voicefixer-api)
 
 **Important:** The maintainers(s) of this repository are not affiliated or connected with the original version of VoiceFixer.
 
