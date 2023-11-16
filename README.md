@@ -37,7 +37,7 @@ We’ve added the following features in VoiceFixer 2:
 Here's what we still need to do - feel free to contribute:
 
 - [ ] Fine-tune model for better results (this one requires $$$/compute :) - see [this](https://github.com/haoheliu/voicefixer_main) training repo)
-- [ ] Use latest version of librosa (probably pretty important, here's the issue the model doesn't work with latest torchlibrosa and the old torchlibrosa doesn't work with the latest librosa. need to completely retrain the model probably or change model python file)
+- [x] Use latest version of librosa (probably pretty important, here's the issue the model doesn't work with latest torchlibrosa and the old torchlibrosa doesn't work with the latest librosa. need to completely retrain the model probably or change model python file) - fixed thanks to @manmay-nakhashi
 - [ ] Add MP3 support for folders
 - [ ] Allow user to restore an object (don't require a file)
 - [ ] Support Windows (mostly file paths) - maybe use [cached_path](https://github.com/allenai/cached_path)
