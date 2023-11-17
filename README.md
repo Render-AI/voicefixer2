@@ -58,7 +58,7 @@ Here's what we still need to do - feel free to contribute:
 
 ## Demo
 
-[Check out the demos to see what VoiceFixer can do!](https://haoheliu.github.io/demopage-voicefixer/)
+[Check out the demos to see what VoiceFixer can do!](https://voicefixer.github.io/)
 
 ## Installation
 
