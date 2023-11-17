@@ -47,6 +47,8 @@ Here's what we still need to do - feel free to contribute:
 - [ ] Allow user to restore an object (don't require a file)
 - [ ] Update model to make [modifying state dict](https://github.com/voicefixer/voicefixer/commit/1b8c384bc2f34645e72c67e46db92b3accd20613) unnecessary - loading it twice increases VRAM usage
 - [ ] [Realtime support](https://github.com/haoheliu/voicefixer_main/issues/11)
+- [ ] Support custom models
+- [ ] [Add to HF Audio-to-Audio pipeline](https://huggingface.co/docs/hub/models-adding-libraries)
 - [ ] Support Windows (mostly file paths) - maybe use [cached_path](https://github.com/allenai/cached_path)
 - [x] Switch models from Zenodo to Hugging Face to increase speed and control over models (in progress)
 - [x] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
