@@ -171,17 +171,20 @@ voicefixer -h
 ```python
 from voicefixer import VoiceFixer
 voicefixer = VoiceFixer()
+# or voicefixer = VoiceFixer(model='voicefixer/voicefixer')
 # Mode 0: Original Model (suggested by default)
 # Mode 1: Add preprocessing module (remove higher frequency)
 # Mode 2: Train mode (might work sometimes on seriously degraded real speech)
 for mode in [0,1,2]:
     print("Testing mode",mode)
-    voicefixer.restore(input=os.path.join(git_root,"test/utterance/original/original.flac"), # low quality .wav/.flac file
-                       output=os.path.join(git_root,"test/utterance/output/output_mode_"+str(mode)+".flac"), # save file path
-                       cuda=False, # GPU acceleration
-                       mode=mode)
-    if(mode != 2):
-        check("output_mode_"+str(mode)+".flac")
+    voicefixer.restore(
+        input=os.path.join(git_root,"test/utterance/original/original.flac"), # low quality .wav/.flac file
+        output=os.path.join(git_root,"test/utterance/output/output_mode_"+str(mode)+".flac"), # save file path
+        cuda=False, # GPU acceleration
+        mode=mode
+    )
+    if (mode != 2):
+        check("output_mode_" + str(mode) + ".flac")
     print("Pass")
 ```
 
