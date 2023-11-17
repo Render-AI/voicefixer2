@@ -14,7 +14,7 @@ class VoiceFixer(nn.Module):
         super(VoiceFixer, self).__init__()
         self._model = voicefixer_fe(channels=2, sample_rate=44100)
         self.analysis_module_ckpt = str(
-            cached_path("hf://voicefixer/voicefixer/model/vf.ckpt")
+            cached_path("hf://voicefixer/voicefixer/vf.ckpt")
         )
         if not os.path.exists(self.analysis_module_ckpt):
             raise RuntimeError(

@@ -11,7 +11,7 @@ class Config:
         if sr == 44100:
             Config.ckpt = str(
                 cached_path(
-                    "hf://voicefixer/voicefixer/vocoder/model.ckpt-1490000_trimed.pt"
+                    "hf://voicefixer/vocoder/model.ckpt-1490000_trimed.pt"
                 )
             )
             Config.cond_channels = 512
