@@ -55,12 +55,10 @@ setup(
     include_package_data=True,
     license="MIT",
     classifiers=[
-        "Programming Language :: Python",
         "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: Implementation :: CPython",
-        "Programming Language :: Python :: Implementation :: PyPy",
+        "Programming Language :: Python :: 3.9",
     ],
     entry_points={
         "console_scripts": [
