@@ -53,9 +53,10 @@ setup(
     extras_require=EXTRAS,
     packages=find_packages(),
     include_package_data=True,
-    license="NOSCL-C-2.0",
+    license="MIT",
     classifiers=[
         "Programming Language :: Python",
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: Implementation :: CPython",
