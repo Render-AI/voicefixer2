@@ -29,6 +29,7 @@ We’ve added the following features in VoiceFixer 2:
 
 ## Changelog
 
+* Nov 18, 2023: Fix issue with model cache, thank to @gkarmas. Issue caused by spelling error 😳
 * Nov 16, 2023: Upgrade librosa + torch
 * Nov 11, 2023: Publish to PyPI
 * Nov 11, 2023: Add progress bar support (requires `ffmpeg`) (see TODO below)
@@ -50,6 +51,7 @@ Here's what we still need to do - feel free to contribute:
 - [ ] Support custom models
 - [ ] [Add to HF Audio-to-Audio pipeline](https://huggingface.co/docs/hub/models-adding-libraries)
 - [ ] Support Windows (mostly file paths) - maybe use [cached_path](https://github.com/allenai/cached_path)
+- [ ] Clean up CLI (may have breaking changes)
 - [x] Switch models from Zenodo to Hugging Face to increase speed and control over models (in progress)
 - [x] Publish to pip (plz don't contribute on this one - I'll do it eventually but I have a certain workflow + system I like to use :) thanks!)
 - [x] Add TQDM progress bar - crucial for longer conversions - maybe a beginner contribution?
