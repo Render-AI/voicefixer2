@@ -64,7 +64,7 @@ Here's what we still need to do - feel free to contribute:
 
 **Don't want to install the package, but just want to try it out?**
 
-Use our free API (no API key req.d) for audio files under 5 minutes. Non-commercial use only, audio may be collected. Details on [webpage](https://huggingface.co/spaces/voicefixer/voicefixer-api).
+Use our free API (no API key required) for audio files under 5 minutes. Non-commercial use only, audio may be collected. Details on [webpage](https://huggingface.co/spaces/voicefixer/voicefixer-api).
 
 ```bash
 curl -X POST -H "Content-Type: multipart/form-data" -F "file=@test.mp3" https://voicefixer-voicefixer-api.hf.space/process_audio > processed_audio.wav
