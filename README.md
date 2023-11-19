@@ -216,3 +216,7 @@ This software and its documentation may contain links to external websites or re
 ## Note
 
 Maintenance of VoiceFixer 2 is powered by [NeuralVox](https://github.com/NeuralVox).
+
+## Advertisement
+
+My newest audio-related AI project: TTS API - a open source Tortoise TTS API with streaming support that's coming soon. [Join waitlist](https://github.com/NeuralVox/tts-api). 
